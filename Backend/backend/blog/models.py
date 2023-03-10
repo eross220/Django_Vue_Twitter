@@ -58,7 +58,7 @@ class Tag(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField()
-    content = models.RichTextField()
+    content = models.TextField()
     featured_image = models.ImageField(upload_to='posts/featured_images/%Y/%m/%d/')
     is_published = models.BooleanField(default=False)
     is_featured = models.BooleanField(default=False)

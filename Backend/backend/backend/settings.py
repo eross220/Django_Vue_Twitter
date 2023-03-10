@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog'
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Media Files
-MEIDA_ROOT = os.path.joiin(BASE_DIR,'mediafiles')
+MEIDA_ROOT = os.path.join(BASE_DIR,'mediafiles')
 MEDIA_URL = '/media/'
 
 # Change Default User Model
