@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog'
+    'blog',
+    'graphene_django'
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,8 @@ MEDIA_URL = '/media/'
 
 # Change Default User Model
 AUTH_USER_MODEL = 'blog.User'
+
+# Configure GraphQL
+GRAPHENE = {
+    "SCHEMA": "blog.schema.schema",
+}
