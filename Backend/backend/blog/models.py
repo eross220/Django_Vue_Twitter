@@ -80,3 +80,26 @@ class Post(models.Model):
 
     def get_number_of_likes(self):
         return self.likes.count()
+
+class Comment(models.Model):
+    content = models.TextField(max_length=1000)
+    created_at = models.DateField(auto_now_add=True)
+    is_approved = models.BooleanField(default=False)
+
+    likes = models.ManyToManyField(User, related_name='comment_like')
+
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    post = models.ForeignKey(Post, on_delete=models.SET_NULL, null=True)
+
+    class Meta:
+        verbose_name = 'comment'
+        verbose_name_plural = '6. Comments'
+
+    def  __str__(self):
+        if len(self.content) > 50:
+            return self.content[:50]+'...'
+        else:
+            return self.content
+
+    def get_number_of_likes(self):
+        return self.likes.count()
