@@ -21,7 +21,7 @@ const router = createRouter({
       component: PostView
     },
     {
-      path: '/category',
+      path: '/category/:category',
       name: 'Category',
       component: CategoryView
     },
